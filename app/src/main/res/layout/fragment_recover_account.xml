@@ -15,6 +15,7 @@
         android:id="@+id/linearLayout1">
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:navigationIcon="@drawable/ic_back"
@@ -54,6 +55,7 @@
                 android:layout_marginTop="26dp"/>
 
             <EditText
+                android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:hint="Digite seu e-mail"
@@ -65,6 +67,7 @@
 
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/CriarConta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Enviar"
