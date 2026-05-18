@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1085963031218",
+    "project_id": "taskapp2-2408e",
+    "storage_bucket": "taskapp2-2408e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085963031218:android:a9814a749bf78f19f3afab",
+        "android_client_info": {
+          "package_name": "com.laraduda.task2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb3AdoWgneqouRiRc3aotJNwl57zKQ5AE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

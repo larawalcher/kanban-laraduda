@@ -1,12 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("kotlin-parcelize")
+    id("com.google.gms.google-services")
 }
 
 android {
     namespace = "com.laraduda.task2"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
+
 
     defaultConfig {
         applicationId = "com.laraduda.task2"
@@ -48,4 +49,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(platform("com.google.firebase:firebase-bom:34.13.0"))
+    implementation("com.google.firebase:firebase-auth:24.1.0")
+    implementation("com.google.firebase:firebase-database-ktx:21.0.0")
+
 }
