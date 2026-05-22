@@ -62,7 +62,7 @@
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
                 android:layout_marginTop="4dp"
-                android:background="@drawable/bg_edit_text"/>
+                style="@style/EditTextTheme"/>
 
 
 

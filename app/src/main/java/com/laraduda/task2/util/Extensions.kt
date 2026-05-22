@@ -1,8 +1,11 @@
 package com.laraduda.task2.util
 
+import com.laraduda.task2.R
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.laraduda.task2.databinding.BottomSheetBinding
 
 fun Fragment.initTollbar(toolbar: Toolbar){
     (activity as AppCompatActivity).setSupportActionBar(toolbar)
@@ -11,5 +14,29 @@ fun Fragment.initTollbar(toolbar: Toolbar){
     toolbar.setNavigationOnClickListener {
         activity?.onBackPressedDispatcher?.onBackPressed()
     }
+}
+
+
+fun Fragment.showBottomSheet(
+    titleDialog: Int? = null,
+    titleButton: Int? = null,
+    message: Int,
+    onClick: () -> Unit ={}
+){
+
+    val bottomSheetDialog = BottomSheetDialog(requireContext(), R.style.CustomBottomSheetDialog)
+    val binding: BottomSheetBinding =
+        BottomSheetBinding.inflate( layoutInflater, null, false)
+
+    binding.textviewTitle.text= getText(titleDialog ?: R.string.text_title_warning )
+    binding.textviewMessage.text = getText(message)
+    binding.buttonOk.text = getText(titleButton ?: R.string.text_button_warning)
+    binding.buttonOk.setOnClickListener {
+        onClick()
+        bottomSheetDialog.dismiss()
+    }
+
+    bottomSheetDialog.setContentView(binding.root)
+    bottomSheetDialog.show()
 }
 

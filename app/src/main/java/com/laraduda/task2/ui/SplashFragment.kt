@@ -31,24 +31,11 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        auth = FirebaseAuth.getInstance()
-
         Handler(Looper.getMainLooper()).postDelayed({checkAuth()}, 3000)
     }
 
     private fun checkAuth(){
-        try {
-            val currentUser = auth.currentUser
-
-            if (currentUser != null) {
-                findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
-            }else{
-                findNavController().navigate(R.id.action_splashFragment_to_autentication)
-            }
-        }catch ( e: Exception){
-            Toast.makeText(requireContext(), e.message.toString(), Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_splashFragment_to_autentication)
-        }
+        findNavController().navigate(R.id.action_splashFragment_to_autentication)
     }
 
     override fun onDestroyView() {

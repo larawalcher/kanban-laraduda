@@ -9,6 +9,7 @@ import android.widget.Toast
 import com.laraduda.task2.R
 import com.laraduda.task2.databinding.FragmentFormTaskBinding
 import com.laraduda.task2.util.initTollbar
+import com.laraduda.task2.util.showBottomSheet
 
 class FormTaskFragment: Fragment(){
     private var _binding: FragmentFormTaskBinding? = null
@@ -35,14 +36,17 @@ class FormTaskFragment: Fragment(){
 
     private fun validateData(){
         val description = binding.editTextDescricao.text.toString().trim()
-
-
         if (description.isNotBlank()){
             Toast.makeText(requireContext(), "Tudo ok!", Toast.LENGTH_SHORT).show()
 
         }else{
-            Toast.makeText(requireContext(), "Preencha uma descrição!", Toast.LENGTH_SHORT).show()
+            showBottomSheet(message = R.string.description_empty_form_task_fragment)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
     }
 

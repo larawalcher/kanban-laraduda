@@ -12,6 +12,7 @@ import com.laraduda.task2.R
 import com.google.firebase.auth.FirebaseAuth
 import com.laraduda.task2.databinding.FragmentRegisterBinding
 import com.laraduda.task2.util.initTollbar
+import com.laraduda.task2.util.showBottomSheet
 
 
 class RegisterFragment : Fragment() {
@@ -48,13 +49,12 @@ class RegisterFragment : Fragment() {
 
         if (email.isNotBlank()){
             if (senha.isNotBlank()){
-                binding.progressBar.isVisible = true
-                registerUser(email, senha)
+                Toast.makeText(requireContext(), "Tudo OK!", Toast.LENGTH_SHORT).show()
             }else{
-                Toast.makeText(requireContext(), "Preencha uma senha!", Toast.LENGTH_SHORT).show()
+               showBottomSheet(message = R.string.password_empty_register_fragment)
             }
         }else{
-            Toast.makeText(requireContext(), "Preencha um email valido!", Toast.LENGTH_SHORT).show()
+            showBottomSheet(message = R.string.email_empty_register_fragment)
         }
     }
 

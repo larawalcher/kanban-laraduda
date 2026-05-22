@@ -10,6 +10,7 @@ import com.laraduda.task2.R
 import com.laraduda.task2.databinding.FragmentLoginBinding
 import com.laraduda.task2.databinding.FragmentRecoverAccountBinding
 import com.laraduda.task2.util.initTollbar
+import com.laraduda.task2.util.showBottomSheet
 
 class RecoverAccountFragment : Fragment() {
 
@@ -46,7 +47,7 @@ class RecoverAccountFragment : Fragment() {
                 Toast.makeText(requireContext(), "Tudo ok!", Toast.LENGTH_SHORT).show()
 
         }else{
-            Toast.makeText(requireContext(), "Preencha um email valido!", Toast.LENGTH_SHORT).show()
+            showBottomSheet(message = R.string.email_empty)
         }
     }
 
