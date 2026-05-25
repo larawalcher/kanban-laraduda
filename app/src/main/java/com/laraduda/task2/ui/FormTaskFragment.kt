@@ -11,6 +11,7 @@ import com.laraduda.task2.databinding.FragmentFormTaskBinding
 import com.laraduda.task2.util.initTollbar
 import com.laraduda.task2.util.showBottomSheet
 
+
 class FormTaskFragment: Fragment(){
     private var _binding: FragmentFormTaskBinding? = null
     private val binding get() = _binding!!
@@ -40,7 +41,8 @@ class FormTaskFragment: Fragment(){
             Toast.makeText(requireContext(), "Tudo ok!", Toast.LENGTH_SHORT).show()
 
         }else{
-            showBottomSheet(message = R.string.description_empty_form_task_fragment)
+            showBottomSheet(message = getString(R.string.description_empty_form_task_fragment))
+
         }
     }
 

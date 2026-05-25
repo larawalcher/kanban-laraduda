@@ -75,6 +75,7 @@
                 app:backgroundTint="@null"
                 android:background="@drawable/bg_btn"
                 android:layout_marginTop="16dp"
+                style="@style/ButtonTheme"
 
 
                 />
