@@ -12,12 +12,12 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:orientation="vertical"
-        android:layout_marginHorizontal="25dp"
         >
 
         <TextView
@@ -27,14 +27,14 @@
             android:textColor="@color/white"/>
 
         <EditText
-            android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:id="@+id/editTextEmail"
+            style="@style/EditTextTheme"
+            android:layout_marginTop="4dp"
             android:hint="@string/hint_edit_email"
             android:inputType="textEmailAddress"
-            android:padding="10dp"
-            android:layout_marginTop="4dp"
-            style="@style/EditTextTheme"/>
+             />
 
         <TextView
             android:layout_width="wrap_content"
