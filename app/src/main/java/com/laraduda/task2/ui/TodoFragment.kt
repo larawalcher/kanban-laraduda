@@ -9,12 +9,9 @@ import androidx.navigation.fragment.findNavController
 import com.laraduda.task2.R
 import com.laraduda.task2.databinding.FragmentHomeBinding
 import com.laraduda.task2.databinding.FragmentTodoBinding
-import com.laraduda.task2.ui.adapter.TaskAdapter
 
 
 class TodoFragment : Fragment() {
-
-    private lateinit var taskAdapter: TaskAdapter
 
     private var _binding: FragmentTodoBinding? = null
     private val binding get() = _binding!!
@@ -37,12 +34,6 @@ class TodoFragment : Fragment() {
         binding.floatingActionButton2.setOnClickListener {
             findNavController().navigate((R.id.action_homeFragment_to_formTaskFragment))
         }
-    }
-
-    private fun initRecyclerViewTask(taskList: List<Task>){
-
-        taskAdapter = TaskAdapter(taskList)
-        binding.recyclerViewTask.layoutManager = Linear
     }
 
     override fun onDestroyView() {
